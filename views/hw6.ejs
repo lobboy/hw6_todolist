@@ -1,0 +1,38 @@
+<html>
+	<head>
+		<link href="assets/style.css" type="text/css" rel="stylesheet" />
+		<script src="https://code.jquery.com/jquery-1.11.3.min.js" ></script>
+	</head>
+	<body><center>
+		<h1>TODO List</h1>
+		<form method="POST" action="/r">
+          <table width="300" border="1">
+          　<tr>
+			<td>工作名稱: </td> <td><input type="text" id="firstname" name="firstname" /><br /></td>
+            </tr>
+　          <tr>
+			<td>內容: </td> <td><input type="text" id="lastname" name="lastname" /><br /></td>
+　          </tr>
+          </table>
+			<input type="submit" value="Submit" />
+		</form>
+        <hr>
+        <h1>Data Stored</h1>
+        <% if(userinfos.length){ %>
+        <table width="300" border="1">
+          　<tr>
+          　<td>工作名稱</td>
+　          <td>內容</td>
+　          </tr>
+
+            <% userinfos.forEach(function(userinfos){ %>
+            <tr>
+            <td><%= userinfos['firstname'] %></td> 
+            <td><%= userinfos['lastname'] %></td>
+            </tr>
+            <% }) %>
+        
+        </table>
+        <% } %>
+	</center></body>
+</html>

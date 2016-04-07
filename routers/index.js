@@ -1,12 +1,10 @@
 var express = require('express'),
-    index   = require('../controllers/index'),
-    index_post = require('../controllers/index_post'),
-    person  = require('../controllers/person'),
+    hw6   = require('../controllers/hw6'),
+    hw6_post   = require('../controllers/hw6_post'),
     router  = express.Router();
 
-router.route('/').get(index);
-router.route('/r').post(index_post);
-//router.route('/#').post(index_post);
+router.route('/').get(hw6);
+router.route('/r').post(hw6_post);
 //router.route('/person').post(person);
 
 module.exports = router;
