@@ -8,17 +8,19 @@ var Person = require('../models/person');
 module.exports = function(req, res, next)
 {
     var person = new Person({
-		firstname: req.body.firstname,
-		lastname: req.body.lastname
+		username: req.body.username,
+		content: req.body.content
 	});
 	person.save(function(err){
 		if (err) throw err;
 		console.log('person saved!');
 	});
-  Person.find({}, function (err, users) 
-  {
-      if(err) throw err;
+    
+    res.redirect('/');
+ // Person.find({}, function (err, users) 
+ // {
+ //     if(err) throw err;
       
-      res.render('hw6',{userinfos: users});
-  });
+      //res.render('hw6',{userinfos: users});
+  //});
 };

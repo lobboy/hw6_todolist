@@ -5,37 +5,38 @@
 		<script src="https://code.jquery.com/jquery-1.11.3.min.js" ></script>
 	</head>
 	<body>
-    <title>TODO List</title>
+    <title>這是Title</title>
     <center>
-		<h1>TODO List</h1>
+		<h1>送筆資料吧</h1>
 		<form method="POST" action="/r">
-          <table width="300" border="1">
+          <table width="720" border="1">
           　<tr>
-			<td>工作名稱: </td> <td><input type="text" id="firstname" name="firstname" /><br /></td>
+			<td>你的名稱: </td> <td><input type="text" id="firstname" name="username" /><br /></td>
             </tr>
 　          <tr>
-			<td>內容: </td> <td><input type="text" id="lastname" name="lastname" /><br /></td>
+			<td>想說的內容: </td> <td><textarea name="content" placeholder="請填寫"></textarea><br /></td>
+            
 　          </tr>
           </table>
 			<input type="submit" value="Save" />
 		</form>
         <hr>
-        <h1>代辦清單</h1>
+        <h1>留言板</h1>
         <% if(userinfos.length){ %>
-        <table width="360" border="1">
-          　<tr>
+          　<!--<tr>
           　<td>工作名稱</td>
 　          <td>內容</td>
-　          </tr>
+　          </tr>-->
 
             <% userinfos.forEach(function(userinfos){ %>
-            <tr>
-            <td><%= userinfos['firstname'] %></td> 
-            <td><%= userinfos['lastname'] %></td>
-            </tr>
+            
+        <table width="360" border="5">
+            <tr align="center"><td>留言人: <%= userinfos['username'] %></td></tr>
+            <tr><td><%= userinfos['content'] %></td></tr>
+        </table>
+        <br/><!--做間格用-->
             <% }) %>
         
-        </table>
         <% } %>
 	</center>
     </body>

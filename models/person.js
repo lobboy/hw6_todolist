@@ -3,7 +3,7 @@ mongoose.connect('mongodb://Kappa:Kappa@ds015720.mlab.com:15720/myfirstmongolab'
 var Schema = mongoose.Schema;
 
 var personSchema = new Schema({
-  firstname : String,
-  lastname  : String
+  username : String,
+  content : String
 });
 module.exports = mongoose.model('Person', personSchema);
